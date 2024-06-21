@@ -89,10 +89,10 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.removeChild(textarea);
 
         // Cambiar el texto del botón temporalmente para indicar que se ha copiado
-        copyCodeButton.textContent = 'Copied!';
+        copyCodeButton.textContent = 'Code copied! Paste it before your own stylesheet.';
         setTimeout(function() {
             copyCodeButton.textContent = 'Copy code';
-        }, 2000); // Vuelve al texto original después de 2 segundos
+        }, 3000); // Vuelve al texto original después de 2 segundos
     });
 
 });
