@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     button.addEventListener('click', function () {
         const selectedOption = fontsSelect.options[fontsSelect.selectedIndex];
-        const fontFamily = trim(selectedOption.textContent.replace(/\s+/g, '+'));
+        const fontFamily = trim(selectedOption.textContent).replace(/\s+/g, '+');
         const selectedVariants = Array.from(variantsSelect.selectedOptions).map(option => option.value).join(',');
         const googleFontUrl = `https://fonts.googleapis.com/css?family=${fontFamily}:${selectedVariants}`;
         const code = "<link rel='stylesheet' href='" + googleFontUrl + "' >";
