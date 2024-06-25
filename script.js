@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const fontFamily = selectedOption.textContent.trim().replace(/\s+/g, '+');
         const selectedVariants = Array.from(variantsSelect.selectedOptions).map(option => option.value).join(',');
         const googleFontUrl = `https://fonts.googleapis.com/css?family=${fontFamily}:${selectedVariants}`;
-        const code = "<link rel='stylesheet' href='" + googleFontUrl + "' >";
+        const code = '<link rel="stylesheet" href="' + googleFontUrl + '" >';
         pre.textContent = code;
     });
 
