@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const googleFontUrl = `https://fonts.googleapis.com/css?family=${fontFamily}:${selectedVariants}`;
         const code = '<link rel="stylesheet" href="' + googleFontUrl + '" >';
         pre.textContent = code;
-        pre2.textContent = "font-family: '"+ selectedOption.textContent.trim() +"'";
+        pre2.textContent = "font-family: '"+ selectedOption.textContent.trim() +"';";
     });
 
     const copyCodeButton = document.getElementById('copy-code-1');
