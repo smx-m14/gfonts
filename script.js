@@ -30,7 +30,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const fontsSelect = document.getElementById('fonts');
     const variantsSelect = document.getElementById('variants');
     const button = document.getElementById('make-code');
-    const pre = document.getElementById('code-display');
+    const pre = document.getElementById('code-display-1');
+    const pre2 = document.getElementById('code-display-2');
 
     fontsSelect.addEventListener('change', function () {
         const selectedOption = fontsSelect.options[fontsSelect.selectedIndex];
@@ -74,9 +75,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const googleFontUrl = `https://fonts.googleapis.com/css?family=${fontFamily}:${selectedVariants}`;
         const code = '<link rel="stylesheet" href="' + googleFontUrl + '" >';
         pre.textContent = code;
+        pre2.textContent = "font-family: '"+ selectedOption.textContent.trim() +"'";
     });
 
-    const copyCodeButton = document.getElementById('copy-code');
+    const copyCodeButton = document.getElementById('copy-code-1');
     copyCodeButton.addEventListener('click', function () {
         const codeToCopy = pre.textContent.trim();
 
@@ -89,9 +91,28 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.removeChild(textarea);
 
         // Cambiar el texto del botón temporalmente para indicar que se ha copiado
-        copyCodeButton.textContent = 'Code copied! Paste it before your own stylesheet.';
+        copyCodeButton.textContent = 'Code copied! Paste it BEFORE your own stylesheet.';
         setTimeout(function () {
             copyCodeButton.textContent = 'Copy code';
+        }, 3000); // Vuelve al texto original después de 2 segundos
+    });
+
+    const copyCSSButton = document.getElementById('copy-code-2');
+    copyCSSButton.addEventListener('click', function () {
+        const codeToCopy = pre2.textContent.trim();
+
+        // Crear un elemento de textarea temporal para copiar el texto al portapapeles
+        const textarea = document.createElement('textarea');
+        textarea.value = codeToCopy;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+
+        // Cambiar el texto del botón temporalmente para indicar que se ha copiado
+        copyCSSButton.textContent = 'Code copied! Paste it INSIDE your own selector.';
+        setTimeout(function () {
+            copyCSSButton.textContent = 'Copy code';
         }, 3000); // Vuelve al texto original después de 2 segundos
     });
 

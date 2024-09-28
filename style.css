@@ -34,8 +34,16 @@ button {
     transition: background-color 0.3s;
 }
 
+#make-code {
+    background-color: #5D85AC;
+}
+
 button:hover {
     background-color: #903532;
+}
+
+#make-code:hover {
+    background-color: #314b65;
 }
 
 pre {
@@ -48,6 +56,8 @@ pre {
     border-radius: 4px;
     font-size: 14px;
     line-height: 1.4;
+    height: 70px;
+    overflow: hidden;
 }
 
 select[multiple] {
@@ -55,3 +65,11 @@ select[multiple] {
     min-height: 120px;
 }
 
+section {
+    display: flex;
+    gap: 10px;
+}
+
+section div {
+    width: 100%;
+}
